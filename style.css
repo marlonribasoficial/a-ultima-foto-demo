@@ -100,8 +100,12 @@ body::before {
 .book-left h1 {
   font-family: 'Homemade Apple', cursive;
   font-size: clamp(2.8rem, 6vw, 5.5rem);
-  line-height: 1.2;
+  line-height: 1.15;
   color: #111;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-subtitle {
