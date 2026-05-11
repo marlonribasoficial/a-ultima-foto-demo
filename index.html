@@ -11,48 +11,37 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#inicio" class="active">☆ Início</a></li>
-      <li><a href="#sobre">📖 Sobre</a></li>
-      <li><a href="#screenshots">📷 Screenshots</a></li>
-      <li><a href="#equipe">👥 Equipe</a></li>
-      <li><a href="#download">⬇ Download</a></li>
-      <li><a href="#como-jogar">❓ Como Jogar</a></li>
-    </ul>
-  </nav>
-
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-table">
       <!-- decorações espalhadas -->
       <div class="deco cd"></div>
       <div class="deco phone"></div>
-      <div class="deco keychain"></div>
-      <div class="deco beads"></div>
       <div class="deco stars-purple"></div>
-      <div class="deco confetti"></div>
 
-      <!-- livro aberto -->
-      <div class="book">
-        <div class="book-left">
+      <!-- livro como imagem real com overlay -->
+      <div class="book-wrapper">
+        <img src="livro.png" alt="Livro aberto" class="book-img" />
+
+        <!-- overlay esquerdo: título e subtítulo -->
+        <div class="book-overlay-left">
           <h1 class="game-title">a última<br>Foto</h1>
           <p class="subtitle">um escape room<br>que esconde mais<br>do que respostas.</p>
           <div class="heart-deco">♡</div>
         </div>
-        <div class="book-right">
+
+        <!-- overlay direito: botões e sticky note -->
+        <div class="book-overlay-right">
+          <div class="sticky-note">feito com<br>amor e<br>nostalgia ♡</div>
           <a href="#" class="btn-primary">Iniciar Jogo</a>
           <a href="#como-jogar" class="btn-primary">Como Jogar</a>
           <a href="#" class="btn-link">Créditos</a>
-          <div class="sticky-note">feito com<br>amor e<br>nostalgia ♡</div>
         </div>
       </div>
 
-      <!-- polaroid -->
-      <div class="polaroid-hero">
-        <img src="tela1.png" alt="Festa de aniversário anos 2000" />
-        <p class="polaroid-caption">anos 2000 ♡</p>
+      <!-- ícone do app no lugar da polaroid -->
+      <div class="app-icon-wrapper">
+        <img src="aultimafoto_icon.png" alt="Ícone A Última Foto" class="app-icon" />
       </div>
 
       <!-- sobre o jogo notepad -->
