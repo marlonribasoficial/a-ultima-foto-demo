@@ -1,9 +1,4 @@
-@font-face {
-  font-family: 'Yoxall';
-  src: url('YOXALL__.TTF') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -20,7 +15,7 @@ body {
     linear-gradient(rgba(255,255,255,0.05), rgba(255,255,255,0.05)),
     url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop') center/cover fixed;
 
-  font-family: 'Yoxall', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   color: #2f1d1d;
   overflow-x: hidden;
 }
@@ -31,6 +26,7 @@ body::before {
   inset: 0;
   background: rgba(50,20,10,0.25);
   pointer-events: none;
+  z-index: -1;
 }
 
 .topbar {
@@ -41,9 +37,10 @@ body::before {
   max-width: 1100px;
   margin: 20px auto;
   background: #f4e7d4;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
   border: 2px solid #d6b99f;
+  backdrop-filter: blur(10px);
 }
 
 .topbar nav {
@@ -58,6 +55,7 @@ body::before {
   color: #402626;
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 600;
   transition: 0.2s ease;
 }
 
@@ -111,6 +109,7 @@ body::before {
   color: #c53f72;
   font-size: 1.2rem;
   line-height: 1.8;
+  font-weight: 600;
 }
 
 .book-right {
@@ -127,15 +126,20 @@ body::before {
   color: white;
   text-decoration: none;
   padding: 18px 50px;
-  border-radius: 20px;
+  border-radius: 999px;
   font-size: 1.4rem;
-  box-shadow: 0 10px 20px rgba(120,20,60,0.3);
+  font-weight: 600;
+  box-shadow:
+    inset 0 4px 10px rgba(255,255,255,0.2),
+    0 10px 20px rgba(120,20,60,0.3);
+
   transition: 0.25s ease;
 }
 
 .menu-button:hover,
 .download-button:hover {
   transform: scale(1.05) rotate(-1deg);
+  filter: brightness(1.05);
 }
 
 .secondary {
@@ -144,6 +148,7 @@ body::before {
 
 .credits-link {
   color: #4d4d4d;
+  font-size: 1.1rem;
 }
 
 .sticky-note {
@@ -179,7 +184,7 @@ body::before {
 .paper-card,
 .feature-card {
   background: #f7ecd9;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 40px;
   position: relative;
   box-shadow: 0 20px 30px rgba(0,0,0,0.2);
@@ -206,9 +211,11 @@ body::before {
 
 .paper-card p,
 .feature-card p,
-.feature-card li {
+.feature-card li,
+.feature-card ol {
   line-height: 2;
   font-size: 1rem;
+  font-weight: 500;
 }
 
 .polaroid {
@@ -236,11 +243,13 @@ body::before {
   margin: auto;
   background: rgba(170,120,170,0.8);
   padding: 40px 20px;
-  border-radius: 20px;
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
 }
 
 .section-header {
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .screenshots-grid {
@@ -254,6 +263,11 @@ body::before {
   background: #f8f0e2;
   padding: 12px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+.shot:hover {
+  transform: translateY(-8px) rotate(1deg);
 }
 
 .shot img {
@@ -293,7 +307,6 @@ body::before {
 .feature-card ul,
 .feature-card ol {
   padding-left: 20px;
-  line-height: 2;
 }
 
 .download-button {
@@ -321,10 +334,12 @@ body::before {
   background: linear-gradient(#3f2d3d, #22171f);
   border: 8px solid white;
   margin-bottom: 12px;
+  border-radius: 16px;
 }
 
 .member span {
   font-size: 0.9rem;
+  font-weight: 600;
 }
 
 footer {
@@ -332,6 +347,7 @@ footer {
   text-align: center;
   padding: 30px;
   background: rgba(200,150,200,0.7);
+  font-weight: 600;
 }
 
 .floating-icon {
@@ -343,9 +359,17 @@ footer {
 }
 
 @keyframes float {
-  0% { transform: translateY(0px) rotate(-5deg); }
-  50% { transform: translateY(-10px) rotate(2deg); }
-  100% { transform: translateY(0px) rotate(-5deg); }
+  0% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+
+  100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
 }
 
 @media (max-width: 900px) {
@@ -379,6 +403,20 @@ footer {
     width: 80px;
     top: -10px;
     left: 20px;
+  }
+
+  .menu-button,
+  .download-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .book-left h1 {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
 }
