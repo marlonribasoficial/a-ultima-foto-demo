@@ -4,231 +4,205 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>A Última Foto</title>
-
   <link rel="icon" href="aultimafoto_icon.png">
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Patrick+Hand&family=Quicksand:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <link rel="preload" as="image" href="livro.png">
-
+  <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Patrick+Hand:ital,wght@0,400;1,400&family=Caveat:wght@400;600;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- TOPBAR -->
   <header class="topbar">
     <nav>
-      <a href="#inicio">🏠 Início</a>
+      <a href="#inicio">☆ Início</a>
       <a href="#sobre">📖 Sobre</a>
       <a href="#screenshots">📸 Screenshots</a>
       <a href="#equipe">👥 Equipe</a>
       <a href="#download">⬇️ Download</a>
+      <a href="#como-jogar">❓ Como Jogar</a>
     </nav>
   </header>
 
   <main>
 
+    <!-- HERO -->
     <section class="hero-section" id="inicio">
 
-      <img src="aultimafoto_icon.png" class="floating-icon" alt="Ícone do jogo">
+      <div class="hero-bg">
 
-      <div class="book-container">
+        <div class="book-wrapper">
+          <img src="livro.png" class="book-img" alt="Livro aberto">
 
-        <img src="livro.png" class="book-image" alt="Livro">
+          <div class="book-overlay">
 
-        <div class="book-content">
+            <div class="book-left-page">
+              <h1 class="game-title">a última<br>Foto</h1>
+              <p class="tagline">um escape room<br>que esconde mais<br>do que respostas.</p>
+              <div class="doodle-stars">✦ ✧ ✦</div>
+            </div>
 
-          <div class="book-left">
-
-            <h1>
-              <span>a última</span>
-              <span>foto</span>
-            </h1>
-
-            <p class="hero-subtitle">
-              um escape room<br>
-              que esconde mais<br>
-              do que respostas.
-            </p>
+            <div class="book-right-page">
+              <a href="download/AUltimaFotoDemo.zip" class="btn-primary">Iniciar Jogo</a>
+              <a href="#sobre" class="btn-primary btn-secondary">Como Jogar</a>
+              <p class="credits-text">Créditos</p>
+            </div>
 
           </div>
+        </div>
 
-          <div class="book-right">
-
-            <a href="download/AUltimaFotoDemo.zip" class="menu-button">
-              Iniciar Jogo
-            </a>
-
-            <a href="#sobre" class="menu-button secondary">
-              Como Jogar
-            </a>
-
-            <p class="credits-link">Créditos</p>
-
-          </div>
-
+        <div class="sticky-note note-hero">
+          feito com<br>amor e<br>nostalgia ♡
         </div>
 
       </div>
-
-      <div class="sticky-note note-right">
-        feito com<br>
-        amor e<br>
-        nostalgia ♡
-      </div>
-
     </section>
 
-    <section class="about-section" id="sobre">
+    <!-- SOBRE -->
+    <section class="sobre-section" id="sobre">
 
-      <div class="paper-card lined-paper">
-
+      <div class="notebook-card">
+        <div class="notebook-rings">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
         <h2>Sobre o Jogo</h2>
-
-        <p>
-          A Última Foto é um jogo de escape room 3D em primeira pessoa,
-          ambientado em um aniversário brasileiro dos anos 2000.
-        </p>
-
-        <p>
-          Resolva puzzles integrados ao ambiente, explore cada detalhe
-          e descubra os segredos que essa festa esconde.
-        </p>
-
-        <p>
-          Nem tudo é o que parece. Algumas lembranças é melhor deixar guardadas.
-        </p>
-
+        <p>A Última Foto é um jogo de escape room 3D em primeira pessoa, ambientado em um aniversário brasileiro dos anos 2000.</p>
+        <p>Resolva puzzles integrados ao ambiente, explore cada detalhe e descubra os segredos que essa festa esconde.</p>
+        <p>Nem tudo é o que parece. Algumas lembranças é melhor deixar guardadas.</p>
+        <div class="heart-doodle">♡</div>
       </div>
 
-      <div class="polaroid">
-        <img src="tela1.png" alt="Screenshot">
+      <div class="polaroid tilt-right">
+        <img src="tela1.png" alt="Screenshot do jogo">
         <span>anos 2000 ♡</span>
       </div>
 
     </section>
 
+    <!-- SCREENSHOTS -->
     <section class="screenshots-section" id="screenshots">
 
-      <div class="section-header">
+      <div class="section-title-tape">
         <h2>Screenshots</h2>
       </div>
 
-      <div class="screenshots-grid">
+      <div class="screenshots-track">
+        <button class="arrow arrow-left" onclick="scrollShots(-1)">‹</button>
 
-        <div class="shot tape-left">
-          <img src="tela1.png" alt="Screenshot 1">
+        <div class="shots-container" id="shotsContainer">
+          <div class="shot tape-tl"><img src="tela1.png" alt="Screenshot 1"></div>
+          <div class="shot tape-tr"><img src="tela2.png" alt="Screenshot 2"></div>
+          <div class="shot tape-tl"><img src="tela3.png" alt="Screenshot 3"></div>
+          <div class="shot tape-tr"><img src="tela4.png" alt="Screenshot 4"></div>
         </div>
 
-        <div class="shot tape-right">
-          <img src="tela2.png" alt="Screenshot 2">
-        </div>
-
-        <div class="shot tape-left">
-          <img src="tela3.png" alt="Screenshot 3">
-        </div>
-
-        <div class="shot tape-right">
-          <img src="tela4.png" alt="Screenshot 4">
-        </div>
-
+        <button class="arrow arrow-right" onclick="scrollShots(1)">›</button>
       </div>
 
     </section>
 
-    <section class="features-section">
+    <!-- FEATURES + DOWNLOAD + COMO ABRIR -->
+    <section class="features-section" id="download">
 
-      <div class="feature-card lined-paper">
-
+      <div class="feature-card notebook-card" id="features">
+        <div class="notebook-rings sm">
+          <span></span><span></span><span></span>
+        </div>
         <h2>Features ♡</h2>
-
         <ul>
-          <li>☆ Puzzles 2D integrados ao ambiente 3D</li>
-          <li>☆ Exploração em primeira pessoa</li>
-          <li>☆ Ambientação brasileira anos 2000</li>
-          <li>☆ Atmosfera nostálgica e psicológica</li>
+          <li>✦ Puzzles 2D integrados ao ambiente 3D</li>
+          <li>✦ Exploração e interação em primeira pessoa</li>
+          <li>✦ Ambientação brasileira anos 2000</li>
+          <li>✦ Atmosfera nostálgica e imersiva</li>
         </ul>
-
+        <div class="doodle-bottom">☀︎</div>
       </div>
 
-      <div class="feature-card lined-paper" id="download">
-
+      <div class="feature-card notebook-card">
+        <div class="notebook-rings sm">
+          <span></span><span></span><span></span>
+        </div>
         <h2>Download da Demo ♡</h2>
-
-        <p>
-          Baixe a demo para macOS e viva essa experiência.
-        </p>
-
-        <a href="download/AUltimaFotoDemo.zip" class="download-button">
-           Baixar para macOS
+        <p>Baixe a demo para macOS e viva essa experiência.</p>
+        <a href="download/AUltimaFotoDemo.zip" class="btn-download">
+          <span class="apple-icon">&#63743;</span> Baixar para macOS
         </a>
-
-        <small>(.zip)</small>
-
+        <small class="zip-label">(.zip)</small>
+        <p class="disclaimer">* O jogo pode ser aberto seguindo as instruções abaixo.</p>
+        <div class="doodle-bottom camera">📷</div>
       </div>
 
-      <div class="feature-card lined-paper">
-
+      <div class="feature-card notebook-card" id="como-jogar">
+        <div class="notebook-rings sm">
+          <span></span><span></span><span></span>
+        </div>
         <h2>Como abrir no macOS ♡</h2>
-
         <ol>
-          <li>Baixe e extraia o arquivo .zip</li>
-          <li>Clique com o botão direito no app</li>
-          <li>Selecione “Abrir”</li>
-          <li>Confirme a execução do aplicativo</li>
+          <li><span class="num">1</span> Baixe e extraia o arquivo .zip</li>
+          <li><span class="num">2</span> Clique com o botão direito no app</li>
+          <li><span class="num">3</span> Selecione "Abrir"</li>
+          <li><span class="num">4</span> Clique em "Abrir" novamente<br>na janela de confirmação</li>
         </ol>
-
+        <div class="warning-note">
+          "Este app não pode ser verificado pela Apple" porque não foi assinado.
+        </div>
       </div>
 
     </section>
 
+    <!-- EQUIPE -->
     <section class="team-section" id="equipe">
 
-      <div class="paper-card team-card">
+      <div class="sticky-note note-team-left">
+        Não é só<br>uma festa.<br>É uma lembrança.<br>É um segredo.
+      </div>
 
+      <div class="team-card notebook-card">
         <h2>Equipe ♡</h2>
-
         <div class="team-grid">
 
           <div class="member">
-            <div class="avatar"></div>
-            <span>Isabella Brum</span>
+            <div class="polaroid-avatar">
+              <div class="avatar-silhouette"></div>
+            </div>
+            <span>Isabella<br>Brum</span>
           </div>
 
           <div class="member">
-            <div class="avatar"></div>
-            <span>Julia Oliveira</span>
+            <div class="polaroid-avatar">
+              <div class="avatar-silhouette"></div>
+            </div>
+            <span>Julia<br>Oliveira</span>
           </div>
 
           <div class="member">
-            <div class="avatar"></div>
-            <span>Gabriella Tomoda</span>
+            <div class="polaroid-avatar">
+              <div class="avatar-silhouette"></div>
+            </div>
+            <span>Gabriella<br>Tomoda</span>
           </div>
 
           <div class="member">
-            <div class="avatar"></div>
-            <span>Isabel Cristina</span>
+            <div class="polaroid-avatar">
+              <div class="avatar-silhouette"></div>
+            </div>
+            <span>Isabel<br>Cristina</span>
           </div>
 
           <div class="member">
-            <div class="avatar"></div>
-            <span>Ana Macedo</span>
+            <div class="polaroid-avatar">
+              <div class="avatar-silhouette"></div>
+            </div>
+            <span>Ana<br>Macedo</span>
           </div>
 
         </div>
-
       </div>
 
-      <div class="sticky-note note-bottom">
-        Obrigado por<br>
-        jogar nossa demo! ♡
+      <div class="sticky-note note-team-right">
+        Obrigado por<br>jogar nossa<br>demo! ♡
       </div>
 
     </section>
@@ -239,6 +213,13 @@
     ♡ A Última Foto — 2026 ♡
   </footer>
 
-</body>
+  <script>
+    function scrollShots(dir) {
+      const container = document.getElementById('shotsContainer');
+      const scrollAmount = container.offsetWidth * 0.55;
+      container.scrollBy({ left: dir * scrollAmount, behavior: 'smooth' });
+    }
+  </script>
 
+</body>
 </html>
