@@ -86,7 +86,7 @@ body {
   align-items: center;
   text-align: center;
   gap: 18px;
-  padding: 8% 6% 8% 8%;
+  padding: 8% 0% 8% 8%;
   z-index: 10;
 }
 
@@ -102,7 +102,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 8% 8% 8% 4%;
+  padding: 8% 8% 8% 0%;
   z-index: 10;
 }
 
