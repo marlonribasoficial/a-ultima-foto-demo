@@ -391,6 +391,24 @@ body {
   font-size: 1.2rem;
 }
 
+.btn-win {
+  background: #4a90d9;
+  box-shadow: 0 4px 14px rgba(74,144,217,0.4);
+}
+
+.btn-win:hover {
+  background: #2f6faa;
+}
+
+.btn-linux {
+  background: #e8a030;
+  box-shadow: 0 4px 14px rgba(232,160,48,0.4);
+}
+
+.btn-linux:hover {
+  background: #c07820;
+}
+
 .small-text {
   font-size: 0.8rem !important;
   color: #888 !important;
