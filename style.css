@@ -30,8 +30,6 @@ body {
   overflow-x: hidden;
 }
 
-/* navbar removida */
-
 /* ===========================
    HERO
    =========================== */
@@ -143,7 +141,7 @@ body {
    =========================== */
 .game-title {
   font-family: 'Homemade Apple', cursive;
-  font-size: 2.6rem;
+  font-size: clamp(1rem, 5vw, 2.6rem);
   line-height: 1.35;
   color: var(--text-dark);
   text-align: center;
@@ -157,7 +155,7 @@ body {
 .subtitle {
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: clamp(0.6rem, 2vw, 0.95rem);
   color: var(--pink);
   line-height: 1.7;
 }
@@ -174,13 +172,13 @@ body {
   display: block;
   background-color: var(--pink);
   color: white;
-  padding: 12px 32px;
+  padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 2.5vw, 1rem);
   text-align: center;
-  width: 200px;
+  width: clamp(100px, 22vw, 200px);
   transition: background 0.2s, transform 0.1s;
   box-shadow: 0 3px 10px rgba(232,49,122,0.35);
 }
@@ -208,17 +206,17 @@ body {
    =========================== */
 .sticky-note {
   background: var(--yellow-sticky);
-  padding: 14px 18px;
+  padding: clamp(6px, 1.5vw, 14px) clamp(8px, 2vw, 18px);
   font-family: 'Quicksand', sans-serif;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: clamp(0.5rem, 1.8vw, 0.85rem);
   line-height: 1.6;
   transform: rotate(2deg);
   box-shadow: 2px 3px 8px rgba(0,0,0,0.2);
   position: absolute;
-  right: 28px;
-  top: 20px;
-  max-width: 130px;
+  right: clamp(8px, 3vw, 28px);
+  top: clamp(8px, 2vw, 20px);
+  max-width: clamp(80px, 18vw, 130px);
   z-index: 20;
 }
 
@@ -544,16 +542,65 @@ footer {
 }
 
 /* ===========================
-   RESPONSIVE
+   RESPONSIVE — tablet (max 768px)
    =========================== */
 @media (max-width: 768px) {
+  .hero {
+    padding: 24px 16px 40px;
+  }
+
+  /* No mobile, empilha o livro e tira os overlays absolutos */
+  .book-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-img {
+    width: 100%;
+  }
+
+  /* Overlays viram blocos normais abaixo da imagem */
   .book-overlay-left,
   .book-overlay-right {
-    padding: 5% 4%;
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .book-overlay-left {
+    margin-top: 16px;
+    order: 2;
+  }
+
+  .book-overlay-right {
+    margin-top: 12px;
+    order: 3;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Sticky note vira elemento normal (sem absolute) */
+  .sticky-note {
+    position: static;
+    transform: rotate(2deg);
+    max-width: 130px;
+    font-size: 0.78rem;
+    padding: 10px 14px;
   }
 
   .game-title {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
   }
 
   .btn-primary {
@@ -562,35 +609,91 @@ footer {
     padding: 10px 20px;
   }
 
+  .heart-deco {
+    display: none; /* remove o coração dentro do overlay no mobile para não poluir */
+  }
+
+  /* Sobre row */
   .sobre-row {
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
   }
 
   .app-icon-wrapper {
     transform: none;
   }
 
+  .app-icon {
+    width: 140px;
+    height: 140px;
+  }
+
   .notepad {
     width: 100%;
   }
 
+  /* Info triple */
   .info-triple {
     grid-template-columns: 1fr;
   }
 
+  .info-card {
+    padding: 32px 24px;
+    border-right: none;
+    border-bottom: 1px dashed var(--pink-light);
+  }
+
+  .info-card:last-child {
+    border-bottom: none;
+  }
+
+  /* Equipe */
   .equipe-section {
     flex-direction: column;
     align-items: center;
+    padding: 40px 24px;
+    gap: 24px;
   }
 
   .sticky-left,
   .sticky-right {
     margin-top: 0;
     transform: none;
+    max-width: 100%;
+    text-align: center;
   }
 
   .screenshot-item {
     min-width: 80%;
+  }
+}
+
+/* ===========================
+   RESPONSIVE — mobile pequeno (max 480px)
+   =========================== */
+@media (max-width: 480px) {
+  .game-title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.82rem;
+  }
+
+  .btn-primary {
+    width: 140px;
+    font-size: 0.82rem;
+    padding: 9px 16px;
+  }
+
+  .app-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .sticky-note {
+    font-size: 0.7rem;
+    padding: 8px 10px;
   }
 }
