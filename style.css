@@ -549,68 +549,37 @@ footer {
     padding: 24px 16px 40px;
   }
 
-  /* No mobile, empilha o livro e tira os overlays absolutos */
-  .book-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .book-img {
-    width: 100%;
-  }
-
-  /* Overlays viram blocos normais abaixo da imagem */
-  .book-overlay-left,
-  .book-overlay-right {
-    position: static;
-    width: 100%;
-    height: auto;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
+  /* Overlays continuam absolutos — só escalam */
+  .book-overlay-left {
+    padding: 6% 0% 6% 10%;
     gap: 10px;
   }
 
-  .book-overlay-left {
-    margin-top: 16px;
-    order: 2;
-  }
-
   .book-overlay-right {
-    margin-top: 12px;
-    order: 3;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  /* Sticky note vira elemento normal (sem absolute) */
-  .sticky-note {
-    position: static;
-    transform: rotate(2deg);
-    max-width: 130px;
-    font-size: 0.78rem;
-    padding: 10px 14px;
+    padding: 6% 4% 6% 0%;
+    gap: 10px;
   }
 
   .game-title {
-    font-size: 2rem;
+    font-size: clamp(0.9rem, 4.5vw, 2.6rem);
   }
 
   .subtitle {
-    font-size: 0.88rem;
+    font-size: clamp(0.5rem, 1.8vw, 0.95rem);
   }
 
   .btn-primary {
-    width: 160px;
-    font-size: 0.9rem;
-    padding: 10px 20px;
+    width: clamp(80px, 20vw, 200px);
+    font-size: clamp(0.6rem, 2vw, 1rem);
+    padding: clamp(6px, 1.5vw, 12px) clamp(10px, 2.5vw, 32px);
   }
 
-  .heart-deco {
-    display: none; /* remove o coração dentro do overlay no mobile para não poluir */
+  .sticky-note {
+    font-size: clamp(0.45rem, 1.6vw, 0.85rem);
+    padding: clamp(5px, 1.2vw, 14px) clamp(6px, 1.5vw, 18px);
+    max-width: clamp(70px, 16vw, 130px);
+    right: clamp(6px, 2vw, 28px);
+    top: clamp(6px, 1.5vw, 20px);
   }
 
   /* Sobre row */
@@ -666,34 +635,5 @@ footer {
 
   .screenshot-item {
     min-width: 80%;
-  }
-}
-
-/* ===========================
-   RESPONSIVE — mobile pequeno (max 480px)
-   =========================== */
-@media (max-width: 480px) {
-  .game-title {
-    font-size: 1.6rem;
-  }
-
-  .subtitle {
-    font-size: 0.82rem;
-  }
-
-  .btn-primary {
-    width: 140px;
-    font-size: 0.82rem;
-    padding: 9px 16px;
-  }
-
-  .app-icon {
-    width: 110px;
-    height: 110px;
-  }
-
-  .sticky-note {
-    font-size: 0.7rem;
-    padding: 8px 10px;
   }
 }
