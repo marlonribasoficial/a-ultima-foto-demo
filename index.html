@@ -21,7 +21,7 @@
         <!-- overlay esquerdo: título e subtítulo -->
         <div class="book-overlay-left">
           <h1 class="game-title">A última<br><span class="game-title-foto">foto</span></h1>
-          <p class="subtitle">um escape room<br>que esconde mais<br>do que respostas.</p>
+          <p class="subtitle">um escape room que esconde<br>mais do que respostas.</p>
           <div class="heart-deco">♡</div>
         </div>
 
@@ -48,29 +48,6 @@
     </div>
   </section>
 
-  <!-- SCREENSHOTS -->
-  <section class="screenshots-section" id="screenshots">
-    <h2 class="section-title-white">Screenshots</h2>
-    <div class="screenshots-track-wrapper">
-      <button class="arrow arrow-left" onclick="slideScreenshots(-1)">&#8249;</button>
-      <div class="screenshots-track" id="screenshotsTrack">
-        <div class="screenshot-item">
-          <img src="tela1.png" alt="Screenshot 1" />
-        </div>
-        <div class="screenshot-item">
-          <img src="tela2.png" alt="Screenshot 2" />
-        </div>
-        <div class="screenshot-item">
-          <img src="tela3.png" alt="Screenshot 3" />
-        </div>
-        <div class="screenshot-item">
-          <img src="tela4.png" alt="Screenshot 4" />
-        </div>
-      </div>
-      <button class="arrow arrow-right" onclick="slideScreenshots(1)">&#8250;</button>
-    </div>
-  </section>
-
   <!-- INFO TRIPLA -->
   <section class="info-triple" id="como-jogar">
     <div class="info-card">
@@ -81,7 +58,6 @@
         <li>⭐ Ambientação brasileira anos 2000</li>
         <li>⭐ Atmosfera nostálgica e imersiva</li>
       </ul>
-      <div class="sun-deco">☀</div>
     </div>
 
     <div class="info-card center-card" id="download">
@@ -91,8 +67,6 @@
         <span class="apple-icon">&#xF8FF;</span> Baixar para macOS
       </a>
       <p class="small-text">(.zip 1.2 GB)</p>
-      <p class="smaller-text">* O jogo pode ser aberto seguindo as instruções abaixo.</p>
-      <div class="camera-deco">📷</div>
     </div>
 
     <div class="info-card">
@@ -113,42 +87,55 @@
   <section class="equipe-section" id="equipe">
     <div class="sticky-left">
       Não é só<br>uma festa.<br>É uma lembrança.<br>É um segredo.
-      <br><br>💜
+      <br><br>♡
     </div>
 
     <div class="equipe-center">
       <h2 class="section-title-pink">Equipe ♡</h2>
       <div class="team-grid">
-        <div class="team-member">
-          <div class="polaroid-frame">
-            <div class="silhouette"></div>
-          </div>
-          <p>Isabella<br>Brum</p>
-        </div>
-        <div class="team-member">
-          <div class="polaroid-frame">
-            <div class="silhouette"></div>
-          </div>
-          <p>Julia<br>Oliveira</p>
-        </div>
-        <div class="team-member">
-          <div class="polaroid-frame">
-            <div class="silhouette"></div>
-          </div>
-          <p>Gabriella<br>Tomoda</p>
-        </div>
-        <div class="team-member">
-          <div class="polaroid-frame">
-            <div class="silhouette"></div>
-          </div>
-          <p>Isabel<br>Cristina</p>
-        </div>
+
         <div class="team-member">
           <div class="polaroid-frame">
             <div class="silhouette"></div>
           </div>
           <p>Ana<br>Macedo</p>
         </div>
+
+        <div class="team-member">
+          <div class="polaroid-frame">
+            <div class="silhouette"></div>
+          </div>
+          <p>Gabriella<br>Tomoda</p>
+        </div>
+
+        <div class="team-member">
+          <div class="polaroid-frame">
+            <div class="silhouette"></div>
+          </div>
+          <p>Isabel<br>Cristina</p>
+        </div>
+
+        <div class="team-member">
+          <div class="polaroid-frame">
+            <div class="silhouette"></div>
+          </div>
+          <p>Isabella<br>Brum</p>
+        </div>
+
+        <div class="team-member">
+          <div class="polaroid-frame">
+            <div class="silhouette"></div>
+          </div>
+          <p>Julia<br>Reis</p>
+        </div>
+
+        <div class="team-member">
+          <div class="polaroid-frame">
+            <div class="silhouette"></div>
+          </div>
+          <p>Marlon<br>Ribas</p>
+        </div>
+
       </div>
     </div>
 
@@ -163,14 +150,5 @@
     ♡ A Última Foto — 2025 ♡
   </footer>
 
-  <script>
-    let currentSlide = 0;
-    function slideScreenshots(dir) {
-      const track = document.getElementById('screenshotsTrack');
-      const items = track.querySelectorAll('.screenshot-item');
-      currentSlide = (currentSlide + dir + items.length) % items.length;
-      track.style.transform = `translateX(-${currentSlide * 25}%)`;
-    }
-  </script>
 </body>
 </html>
