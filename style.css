@@ -521,6 +521,14 @@ body {
   justify-content: center;
 }
 
+.polaroid-photo {
+  width: 74px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center top; /* foca no rosto */
+  display: block;
+}
+
 .silhouette::after {
   content: '👤';
   font-size: 2.4rem;
@@ -551,12 +559,12 @@ footer {
 
   /* Overlays continuam absolutos — só escalam */
   .book-overlay-left {
-    padding: 6% 0% 6% 10%;
+    padding: 6% 0% 6% 12%;
     gap: 10px;
   }
 
   .book-overlay-right {
-    padding: 6% 4% 6% 0%;
+    padding: 6% 6% 6% 0%;
     gap: 10px;
   }
 
